@@ -1,0 +1,40 @@
+﻿M&G Coding Test - Submitted by H. Jackson-Robbins 7/10/18
+---------------------------------------------------------
+
+Thanks for the opportunity to take this test. 
+
+
+Discrepancies
+-------------
+
+There are some discrepancies between the expected validation result and what is stated in the readme.md document:
+
+1. 'Invalid user defined SEDOL' scenario - I changed the expected message from 'Checksum digit does not agree with the rest of the input' to the actual message seen 'Checksum digit does not agree with the first 6 characters.' 
+
+In the real world I would have confirmed with the business that this deviation from the spec was ok but it seems reasonable to assume the correctness of the new message in this case.
+
+2. In other scenarios, the expected message "Input string was not 7-characters long" is actually presented as "Input string was not 7-characters long." (note the full stop). I have amended the expected result accordingly.
+
+3. Regarding the SEDOL null/empty string input in scenario 'Null, empty string or string other than 7 characters long' - as the empty string and null are effectively the same thing in terms of input, I have removed the empty string input from the examples in that scenario.
+ 
+
+Enhancements
+-------------
+
+Change utilities to static?
+
+Check that the text in the table is ok, e.g. 'Null' not 'null' is catered for
+
+Go below the UI
+
+Parallelisation using Specflow+
+
+Look into Cypress.io
+
+Deprecated stuff
+
+
+And finally 
+-----------
+ 
+Note that on my machine at least, there is an occasional issue where you run test and it immediately goes to failed state but no text is shown giving a reason. A recompile fixes this issue. 
