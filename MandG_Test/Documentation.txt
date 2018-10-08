@@ -7,7 +7,7 @@ Thanks for the opportunity to take this test.
 Discrepancies
 -------------
 
-There are some discrepancies between the expected validation result and what is stated in the readme.md document:
+There are some discrepancies between the expected validation results and what is stated in the readme.md document:
 
 1. 'Invalid user defined SEDOL' scenario - I changed the expected message from 'Checksum digit does not agree with the rest of the input' to the actual message seen 'Checksum digit does not agree with the first 6 characters.' 
 
@@ -18,23 +18,25 @@ In the real world I would have confirmed with the business that this deviation f
 3. Regarding the SEDOL null/empty string input in scenario 'Null, empty string or string other than 7 characters long' - as the empty string and null are effectively the same thing in terms of input, I have removed the empty string input from the examples in that scenario.
  
 
-Enhancements
--------------
+General Enhancements
+--------------------
 
-Change utilities to static?
+For a more complex project the ideal approach would be to test below the UI such as at API level wherever possible, with minimal 'sanity' UI layer checks.
 
-Check that the text in the table is ok, e.g. 'Null' not 'null' is catered for
+Again, for a more complex piece, parallelisation could be considered using Specflow+
 
-Go below the UI
+Selenium is used in this solution, however there is a lot of buzz about Cypress.io at the moment, and this tool could be considered for future work.
 
-Parallelisation using Specflow+
 
-Look into Cypress.io
+Code Enhancements
+--------------------
 
-Deprecated stuff
+In terms of code approach, I would probably change CommonUtilities to static as it's not necessary to have multiple instances of this class.
+
+A couple of Selenium methods are showing as deprecated. This would need to be attended to for future proofing purposes.
 
 
 And finally 
 -----------
  
-Note that on my machine at least, there is an occasional issue where you run test and it immediately goes to failed state but no text is shown giving a reason. A recompile fixes this issue. 
+Note that on my machine at least, there is an occasional issue where you run the test and it immediately goes to failed state but no text is shown giving a reason. A recompile fixes this issue. 
